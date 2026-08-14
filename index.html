@@ -1,22 +1,426 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>iTang Privacy Policy</title>
-<style>
-body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;max-width:760px;margin:60px auto;padding:0 24px;line-height:1.65;color:#182018}
-h1{color:#247a42} small{color:#666}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>iTang — Privacy & Support</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Times New Roman", Times, serif;
+            color: #1d261f;
+            background:
+                radial-gradient(circle at top left, rgba(32, 137, 77, 0.12), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(205, 164, 52, 0.14), transparent 30%),
+                linear-gradient(145deg, #f7fbf8 0%, #ffffff 45%, #f8f5ea 100%);
+            min-height: 100vh;
+        }
+
+        .top-decoration {
+            height: 7px;
+            background: linear-gradient(
+                90deg,
+                #0d5f32,
+                #17934d,
+                #d3a632,
+                #17934d,
+                #0d5f32
+            );
+        }
+
+        .page {
+            width: calc(100% - 40px);
+            max-width: 920px;
+            margin: 60px auto;
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid rgba(20, 120, 65, 0.18);
+            border-radius: 28px;
+            padding: 54px 62px;
+            box-shadow:
+                0 24px 70px rgba(25, 62, 40, 0.10),
+                0 4px 14px rgba(0, 0, 0, 0.04);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: radial-gradient(
+                circle,
+                rgba(30, 147, 78, 0.12),
+                rgba(30, 147, 78, 0)
+            );
+            top: -150px;
+            right: -100px;
+            pointer-events: none;
+        }
+
+        .card::after {
+            content: "";
+            position: absolute;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            background: radial-gradient(
+                circle,
+                rgba(208, 166, 50, 0.11),
+                rgba(208, 166, 50, 0)
+            );
+            bottom: -140px;
+            left: -90px;
+            pointer-events: none;
+        }
+
+        .brand {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            width: 84px;
+            height: 84px;
+            margin: 0 auto 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #e4bd54;
+            font-size: 43px;
+            font-weight: bold;
+
+            border-radius: 22px;
+            border: 2px solid rgba(221, 184, 73, 0.75);
+
+            background:
+                linear-gradient(145deg, #0b4d29, #148246 55%, #07351d);
+
+            box-shadow:
+                inset 0 0 20px rgba(255, 255, 255, 0.10),
+                0 9px 24px rgba(12, 91, 48, 0.20);
+        }
+
+        h1 {
+            margin: 0;
+            color: #0e6c38;
+            font-size: 42px;
+            line-height: 1.1;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            margin-top: 9px;
+            color: #876c24;
+            font-size: 19px;
+            letter-spacing: 0.8px;
+        }
+
+        .updated {
+            margin-top: 16px;
+            color: #777;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .divider {
+            width: 125px;
+            height: 2px;
+            margin: 30px auto 42px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                #cda43c,
+                #178448,
+                #cda43c,
+                transparent
+            );
+        }
+
+        section {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 36px;
+        }
+
+        h2 {
+            margin: 0 0 14px;
+            color: #0e6c38;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        p {
+            margin: 0 0 17px;
+            font-size: 18px;
+            line-height: 1.75;
+        }
+
+        .privacy-box {
+            padding: 26px 30px;
+            border-radius: 20px;
+            background: linear-gradient(
+                135deg,
+                rgba(235, 249, 240, 0.92),
+                rgba(250, 252, 247, 0.96)
+            );
+            border: 1px solid rgba(22, 133, 69, 0.18);
+        }
+
+        .support-box {
+            margin-top: 42px;
+            padding: 32px;
+            text-align: center;
+
+            border-radius: 22px;
+            border: 1px solid rgba(190, 146, 31, 0.35);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(246, 252, 248, 0.96),
+                    rgba(255, 250, 232, 0.96)
+                );
+
+            box-shadow: 0 12px 30px rgba(65, 78, 43, 0.06);
+        }
+
+        .support-box h2 {
+            margin-bottom: 12px;
+        }
+
+        .support-label {
+            color: #555;
+            font-size: 17px;
+        }
+
+        .email {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 13px 26px;
+
+            border-radius: 999px;
+
+            color: #ffffff;
+            background: linear-gradient(135deg, #0b6735, #16874a);
+
+            font-family: "Times New Roman", Times, serif;
+            font-size: 21px;
+            font-weight: bold;
+            text-decoration: none;
+
+            box-shadow: 0 8px 18px rgba(16, 112, 58, 0.20);
+
+            transition:
+                transform 0.18s ease,
+                box-shadow 0.18s ease;
+        }
+
+        .email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(16, 112, 58, 0.25);
+        }
+
+        footer {
+            position: relative;
+            z-index: 1;
+
+            margin-top: 52px;
+            padding-top: 28px;
+
+            border-top: 1px solid rgba(30, 90, 50, 0.15);
+
+            text-align: center;
+        }
+
+        .footer-mark {
+            color: #b68a20;
+            font-size: 20px;
+            margin-bottom: 7px;
+        }
+
+        .developer {
+            color: #0d6c38;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 0.4px;
+        }
+
+        .footer-email {
+            margin-top: 8px;
+            font-size: 17px;
+        }
+
+        .footer-email a {
+            color: #0d6c38;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .copyright {
+            margin-top: 12px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        @media (max-width: 650px) {
+            .page {
+                width: calc(100% - 22px);
+                margin: 22px auto;
+            }
+
+            .card {
+                padding: 36px 24px;
+                border-radius: 22px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 17px;
+            }
+
+            .support-box {
+                padding: 25px 18px;
+            }
+
+            .email {
+                font-size: 19px;
+                padding: 12px 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<h1>iTang Privacy Policy</h1>
-<p><small>Last updated: August 10, 2026</small></p>
-<p>iTang respects your privacy. The app does not collect, store, track, sell, or share personal data.</p>
-<p>PDF documents selected by the user are processed locally on the device. Their contents are not uploaded to the developer or stored on external servers.</p>
-<p>iTang uses Apple’s built-in text-to-speech technology. It does not use advertising, analytics, tracking technologies, user accounts, or third-party data-collection services.</p>
-<p>The user controls which documents are opened and may remove them from the device at any time.</p>
-<p>Developer: iTang Developer</p>
+
+<div class="top-decoration"></div>
+
+<main class="page">
+
+    <div class="card">
+
+        <header class="brand">
+
+            <div class="logo">iT</div>
+
+            <h1>iTang</h1>
+
+            <div class="subtitle">
+                Privacy Policy & Support
+            </div>
+
+            <div class="updated">
+                Last updated: August 10, 2026
+            </div>
+
+            <div class="divider"></div>
+
+        </header>
+
+
+        <section>
+
+            <h2>Your Privacy</h2>
+
+            <div class="privacy-box">
+
+                <p>
+                    iTang respects your privacy. The app does not collect,
+                    store, track, sell, or share personal data.
+                </p>
+
+                <p>
+                    PDF documents selected by the user are processed locally
+                    on the device. Their contents are not uploaded to the
+                    developer or stored on external servers.
+                </p>
+
+                <p>
+                    iTang uses Apple's built-in technologies for document
+                    processing and text-to-speech. The app does not use
+                    advertising, analytics, tracking technologies, user
+                    accounts, or third-party data-collection services.
+                </p>
+
+                <p>
+                    You remain in control of the documents you open and may
+                    remove them from your device at any time.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="support-box">
+
+            <h2>iTang Support</h2>
+
+            <p class="support-label">
+                For technical support, questions, feedback, or feature
+                requests, please contact the iTang team.
+            </p>
+
+            <a
+                class="email"
+                href="mailto:info@itang.uk"
+                aria-label="Email iTang Support at info@itang.uk"
+            >
+                info@itang.uk
+            </a>
+
+        </section>
+
+
+        <footer>
+
+            <div class="footer-mark">◆</div>
+
+            <div class="developer">
+                iTang Developer
+            </div>
+
+            <div class="footer-email">
+                Support:
+                <a href="mailto:info@itang.uk">
+                    info@itang.uk
+                </a>
+            </div>
+
+            <div class="copyright">
+                © 2026 iTang. All rights reserved.
+            </div>
+
+        </footer>
+
+    </div>
+
+</main>
+
 </body>
 </html>
